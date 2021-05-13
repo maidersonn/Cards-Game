@@ -1,0 +1,100 @@
+:root {
+  --backgrounColor: #ffd6a5;
+  --headerColor: #ffadad;
+  --cardsColor: #fdffb6;
+  --cardHoverColor: #9bf6ff;
+  --cardMatchedColor: #caffbf;
+  --buttonColor: #fffffc;
+  --buttonBorderColor: #a0c4ff;
+  --buttonHoverColor: #a0c4ff;
+}
+
+body {
+  background-color: var(--backgrounColor);
+}
+
+header {
+  background-color: var(--headerColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  height: 15vh;
+  font-size: 2vh;
+}
+
+.card {
+  background-color: var(--cardsColor);
+  border: none;
+  width: 35%;
+  height: 20vh;
+  font-size: 4vh;
+  color: black;
+  border-radius: 8px;
+}
+
+.card:hover:not(.matched) {
+  cursor: pointer;
+  background-color: var(--cardHoverColor);
+}
+
+section {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.matched {
+  background-color: var(--cardMatchedColor);
+}
+
+.playAgain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+  border: 6px solid var(--buttonBorderColor);
+  background-color: var(--buttonColor);
+  cursor: pointer;
+}
+
+.playAgain:hover {
+  background-color: var(--buttonHoverColor);
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (orientation: landscape) {
+  .card {
+    width: 30%;
+    height: 30vh;
+    font-size: 6vh;
+  }
+
+  header {
+    font-size: 4vh;
+  }
+
+  .playAgain {
+    font-size: 4vh;
+  }
+}
