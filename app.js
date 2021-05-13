@@ -1,4 +1,4 @@
-const partners = ["a", "b", "c"];
+const partners = ["A", "B", "C"];
 const numberOfCardsToMatch = 2;
 let matchToCheck = [];
 let matches = [];
@@ -34,14 +34,16 @@ const createOneCard = (element) => {
           document.removeEventListener("click", avoidClick, true);
           fail(matchToCheck);
           matchToCheck = [];
-        }, 2000);
+        }, 1000);
       }
     }
     if (isFinished(matches, partners)) {
       const playAgain = document.createElement("div");
       playAgain.innerHTML =
-        '<a href="./parejas.html"><button id="button">Volver a jugar</button></a>';
-      document.body.appendChild(playAgain);
+        '<a href="./partners.html"><button class="playAgain">Volver a jugar</button></a>';
+      const modal = document.getElementById("myModal");
+      modal.setAttribute("class", "modal");
+      modal.appendChild(playAgain);
     }
   });
 };
@@ -58,7 +60,7 @@ const isMatch = (cards) => {
 
 const success = (cards) => {
   cards.forEach((card) => {
-    card.style.backgroundColor = "green";
+    card.classList.add("matched");
     matches.push(card);
   });
 };
