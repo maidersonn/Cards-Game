@@ -1,15 +1,26 @@
-const partners = ["A", "B", "C"];
+const partners = ["A", "B", "C", "A", "B", "C"];
 const numberOfCardsToMatch = 2;
+const content = document.getElementById("content");
+
 let matchToCheck = [];
 let matches = [];
 
-const content = document.getElementById("content");
+const shuffle = (cards) => {
+  const shuffled = [];
+  const cardsLength = cards.length;
+  for (let i = 0; i < cardsLength; i++) {
+    const random = Math.floor(Math.random() * cards.length);
+    shuffled.push(cards[random]);
+    cards.splice(random, 1);
+  }
+  return shuffled;
+};
 
-const createCards = (array, n) => {
-  for (let i = 0; i < n; i++) {
-    for (let element of array) {
-      createOneCard(element);
-    }
+const partnersShuffled = shuffle(partners);
+
+const createCards = (array) => {
+  for (let element of array) {
+    createOneCard(element);
   }
 };
 
@@ -37,7 +48,7 @@ const createOneCard = (element) => {
         }, 1000);
       }
     }
-    if (isFinished(matches, partners)) {
+    if (isFinished(matches, partnersShuffled)) {
       const playAgain = document.createElement("div");
       playAgain.innerHTML =
         '<a href="./partners.html"><button class="playAgain">Volver a jugar</button></a>';
@@ -78,7 +89,7 @@ const avoidClick = (event) => {
 };
 
 const isFinished = (matchedCards, partnersCards) => {
-  return matchedCards.length === partnersCards.length * 2;
+  return matchedCards.length === partnersCards.length;
 };
 
-createCards(partners, numberOfCardsToMatch);
+createCards(partnersShuffled);
