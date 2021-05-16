@@ -25,6 +25,8 @@ header {
 }
 
 .card {
+  background-image: url("./images/reversoCarta.jpg");
+  background-size: 100% 100%;
   background-color: var(--cardsColor);
   border: none;
   width: 35%;
@@ -46,10 +48,6 @@ section {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-}
-
-.matched {
-  background-color: var(--cardMatchedColor);
 }
 
 .playAgain {
