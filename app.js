@@ -66,7 +66,7 @@ const createOneCard = (element, classCard) => {
     if (isFinished(matches, lengthPartners)) {
       const playAgain = document.createElement("div");
       playAgain.innerHTML =
-        '<a href="./partners.html"><button class="playAgain">Volver a jugar</button></a>';
+        '<a href="./index.html"><button class="playAgain">Volver a jugar</button></a>';
       const modal = document.getElementById("myModal");
       modal.setAttribute("class", "modal");
       modal.appendChild(playAgain);
