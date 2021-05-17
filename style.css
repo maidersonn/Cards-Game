@@ -24,24 +24,44 @@ header {
   font-size: 2vh;
 }
 
-.card {
+.beginner {
   background-image: url("./images/reversoCarta.jpg");
   background-size: 100% 100%;
   background-color: var(--cardsColor);
   border: none;
   width: 35%;
   height: 20vh;
-  font-size: 4vh;
-  color: black;
   border-radius: 8px;
 }
 
-.card:hover:not(.matched) {
+.medium {
+  background-image: url("./images/reversoCarta.jpg");
+  background-size: 100% 100%;
+  background-color: var(--cardsColor);
+  border: none;
+  border-radius: 8px;
+  width: 40%;
+  height: 15vh;
+}
+
+.expert {
+  background-image: url("./images/reversoCarta.jpg");
+  background-size: 100% 100%;
+  background-color: var(--cardsColor);
+  border: none;
+  border-radius: 8px;
+  width: 30%;
+  height: 15vh;
+}
+
+.beginner,
+.medium,
+.expert:hover {
   cursor: pointer;
   background-color: var(--cardHoverColor);
 }
 
-section {
+.content {
   width: 100%;
   height: 80vh;
   display: flex;
@@ -82,10 +102,19 @@ a {
 }
 
 @media only screen and (orientation: landscape) {
-  .card {
+  .beginner {
     width: 30%;
     height: 30vh;
-    font-size: 6vh;
+  }
+
+  .medium {
+    width: 22%;
+    height: 30vh;
+  }
+
+  .expert {
+    width: 22%;
+    height: 20vh;
   }
 
   header {
