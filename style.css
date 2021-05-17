@@ -2,8 +2,6 @@
   --backgrounColor: #ffd6a5;
   --headerColor: #ffadad;
   --cardsColor: #fdffb6;
-  --cardHoverColor: #9bf6ff;
-  --cardMatchedColor: #caffbf;
   --buttonColor: #fffffc;
   --buttonBorderColor: #a0c4ff;
   --buttonHoverColor: #a0c4ff;
@@ -58,7 +56,6 @@ header {
 .medium,
 .expert:hover {
   cursor: pointer;
-  background-color: var(--cardHoverColor);
 }
 
 .content {
@@ -101,6 +98,10 @@ a {
   text-decoration: none;
 }
 
+form {
+  height: 15vh;
+  font-size: 2vh;
+}
 @media only screen and (orientation: landscape) {
   .beginner {
     width: 30%;
@@ -122,6 +123,10 @@ a {
   }
 
   .playAgain {
+    font-size: 4vh;
+  }
+
+  form {
     font-size: 4vh;
   }
 }
