@@ -30,15 +30,15 @@ const shuffle = (cards) => {
   return shuffled;
 };
 
-const createCards = (array) => {
+const createCards = (array, classCard) => {
   for (let element of array) {
-    createOneCard(element);
+    createOneCard(element, classCard);
   }
 };
 
-const createOneCard = (element) => {
+const createOneCard = (element, classCard) => {
   const card = document.createElement("button");
-  card.setAttribute("class", "card");
+  card.setAttribute("class", classCard);
   card.setAttribute("value", element);
   content.appendChild(card);
 
@@ -114,25 +114,28 @@ let lengthPartners = 0;
 beginner.addEventListener("click", () => {
   const partnersBeginner = partners.slice(0, 6);
   const partnersShuffled = shuffle(partnersBeginner);
-  createCards(partnersShuffled);
   lengthPartners = 6;
-  const form = document.querySelector("#form");
+  const cardClass = "beginner";
+  createCards(partnersShuffled, cardClass);
+  const form = document.querySelector("form");
   form.style.display = "none";
 });
 
 medium.addEventListener("click", () => {
   const partnersMedium = partners.slice(0, 8);
   const partnersShuffled = shuffle(partnersMedium);
-  createCards(partnersShuffled);
   lengthPartners = 8;
-  const form = document.querySelector("#form");
+  const cardClass = "medium";
+  createCards(partnersShuffled, cardClass);
+  const form = document.querySelector("form");
   form.style.display = "none";
 });
 
 expert.addEventListener("click", () => {
   const partnersShuffled = shuffle(partners);
-  createCards(partnersShuffled);
   lengthPartners = 12;
-  const form = document.querySelector("#form");
+  const cardClass = "expert";
+  createCards(partnersShuffled, cardClass);
+  const form = document.querySelector("form");
   form.style.display = "none";
 });
