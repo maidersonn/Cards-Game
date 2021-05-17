@@ -86,7 +86,6 @@ const isMatch = (cards) => {
 
 const success = (cards) => {
   cards.forEach((card) => {
-    card.classList.add("matched");
     matches.push(card);
   });
 };
